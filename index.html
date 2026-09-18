@@ -47,7 +47,7 @@
 
                 <div class="w-96 h-[300px] bg-green-200 rounded-2xl items-center overflow-hidden">
 
-                    <div class="bg-green-600 rounded-t-2xl py-4">
+                    <div class="bg-green-600 rounded-t-2xl py-1">
                         <h2 class="text-center font-bold text-xl text-green-50">Como Funciona?</h2>
                     </div>
 
@@ -73,7 +73,7 @@
 
                 <div class="w-[500px] h-[300px] bg-green-200 rounded-2xl items-center overflow-hidden">
 
-                    <div class="bg-green-600 rounded-t-2xl py-4">
+                    <div class="bg-green-600 rounded-t-2xl py-1">
                         <h2 class="text-center font-bold text-xl text-green-50">Oque é o projeto TI-Verde?</h2>
                     </div>
 
@@ -116,8 +116,8 @@
 
         </div>
 
-        <!--Dashboard-->
-        <section class="w-full flex justify-center items-center py-8">
+        <!--Ranking Geral-->
+        <section class="w-full flex justify-center items-center pt-4 pb-4">
 
             <div class="w-full max-w-4xl mx-auto relative pt-10">
 
@@ -126,9 +126,14 @@
                     Ranking
                 </h1>
 
-                <div class="w-full h-[500px] bg-green-200 rounded-2xl p-8 shadow-xl items-center">
+                <div class="w-full h-[500px] bg-green-200 rounded-2xl p-8 shadow-xl items-center relative">
+
+                    <a href="form.html" class="absolute right-4 top-2"><img src="image/avanco-rapido.png" alt="Preencher Formulário" class="w-8 h-8"></a>
+
                     <div class="w-xl mx-auto h-[415px]">
+
                         <canvas id="ranking"></canvas>
+
                     </div>
                 </div>
 
@@ -136,6 +141,7 @@
 
         </section>
 
+        <!--Script do Gráfico do Ranking-->
         <script>
             const ctx = document.getElementById('ranking').getContext('2d');
             new Chart(ctx, {
@@ -156,6 +162,16 @@
         </script>
 
         </div>
+        </section>
+
+        <!--Liderança do Ranking-->
+        <section class="w-full flex justify-center items-center">
+
+            <div class="w-full h-[500px] bg-green-200 rounded-2xl p-8 items-center relative">
+                <img src="image/coroa.png" alt="" class="w-24 absolute top-[-45px] left-[80px]">
+                <div class="bg-blue-400 rounded-full w-48 h-48 absolute top-[45px]"></div>
+            </div>
+
         </section>
 
     </main>
