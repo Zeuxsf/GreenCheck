@@ -33,22 +33,23 @@
         <div id="header"
             class="bg-green-800 text-green-50 flex flex-col items-center justify-center py-10 px-4 shadow-xl">
 
-            <h1 class="font-['Pacifico'] text-6xl md:text-9xl text-center">GreenCheck</h1>
+            <h1 class="font-['Pacifico'] text-5xl sm:text-6xl md:text-9xl text-center">GreenCheck</h1>
 
         </div>
     </header>
 
-    <main class="flex flex-col gap-5 flex-1 p-4 mx-auto items-center">
+    <main class="flex flex-col gap-5 flex-1 p-4 mx-auto items-center w-full">
 
-        <div class="w-full max-w-4xl mx-auto grid grid-cols-[1fr_2fr] gap-4 pt-10">
+        <div class="w-full max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-4 pt-10">
 
-            <!--Como funciona?-->
-            <section class="w-96 flex justify-center items-center py-1">
+            <!--Formulário-->
+            <section class="w-full lg:w-96 flex justify-center items-center py-1">
 
-                <div class="w-96 h-[300px] bg-green-200 rounded-2xl items-center overflow-hidden">
+                <div
+                    class="w-full lg:w-96 h-auto lg:h-[300px] bg-green-200 rounded-2xl items-center overflow-hidden relative pb-14 lg:pb-0">
 
                     <div class="bg-green-600 rounded-t-2xl py-1">
-                        <h2 class="text-center font-bold text-xl text-green-50">Como Funciona?</h2>
+                        <h2 class="text-center font-bold text-sm text-green-50">Formulário</h2>
                     </div>
 
                     <div class="flex justify-center px-6">
@@ -64,14 +65,19 @@
                         </ul>
                     </div>
 
+                    <div
+                        class="bg-green-800 font-bold text-green-50 absolute right-4 lg:right-[38px] bottom-[15px] w-24 h-8 rounded-2xl">
+                        <a href="form.html" class="w-full h-full flex items-center justify-center">Começar</a></div>
+
                 </div>
 
             </section>
 
             <!--Oque é o projeto TI-Verde? -->
-            <section class="w-[500px] flex justify-center items-center py-1">
+            <section class="w-full lg:w-[500px] flex justify-center items-center py-1">
 
-                <div class="w-[500px] h-[300px] bg-green-200 rounded-2xl items-center overflow-hidden">
+                <div
+                    class="w-full lg:w-[500px] h-auto lg:h-[300px] bg-green-200 rounded-2xl items-center overflow-hidden pb-3 lg:pb-0">
 
                     <div class="bg-green-600 rounded-t-2xl py-1">
                         <h2 class="text-center font-bold text-xl text-green-50">Oque é o projeto TI-Verde?</h2>
@@ -90,20 +96,23 @@
 
                         <h3 class="text-green-800 font-bold">Na Prática:</h3>
 
-                        <div class="px-6">
-                            <ul class="grid grid-cols-2 gap-x-6 gap-y-1 list-disc break-words text-sm">
-                                <li class="hover:text-green-600"><a
-                                        href="https://brasp.com.br/site/conteudo/157-ti-verde.html"
-                                        target="_blank">Virtualização</a></li>
-                                <li class="hover:text-green-600"><a
-                                        href="https://evernex.com/pt-br/guia-de-mercado/ti-verde/"
-                                        target="_blank">Extensão da Vida Útil</a></li>
-                                <li class="hover:text-green-600"><a
-                                        href="https://fsrental.com.br/descarte-inteligente-futuro-sustentavel-ti-verde-sua-empresa-sabe-onde-vao-parar-os-equipamentos-antigos/"
-                                        target="_blank">Descarte Consciente</a></li>
-                                <li class="hover:text-green-600"><a
-                                        href="https://www.careplus.com.br/careplus-mais/veja-por-que-e-importante-reduzir-o-uso-de-papel-e-conheca-6-dicas-de-como-fazer-isso"
-                                        target="_blank">Redução de Papel</a></li>
+                        <div class="px-2 sm:px-6">
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 list-disc break-words text-sm">
+                                <li class="hover:text-green-600">
+                                    <a href="https://brasp.com.br/site/conteudo/157-ti-verde.html"
+                                        target="_blank">Virtualização</a>
+                                </li>
+                                <li class="hover:text-green-600">
+                                    <a href="https://evernex.com/pt-br/guia-de-mercado/ti-verde/"
+                                        target="_blank">Extensão da Vida Útil</a>
+                                </li>
+                                <li class="hover:text-green-600">
+                                    <a href="https://fsrental.com.br/descarte-inteligente-futuro-sustentavel-ti-verde-sua-empresa-sabe-onde-vao-parar-os-equipamentos-antigos/"
+                                        target="_blank">Descarte Consciente</a>
+                                </li>
+                                <li class="hover:text-green-600">
+                                    href="https://www.careplus.com.br/careplus-mais/veja-por-que-e-importante-reduzir-o-uso-de-papel-e-conheca-6-dicas-de-como-fazer-isso"
+                                    target="_blank">Redução de Papel</a></li>
                             </ul>
                         </div>
 
@@ -121,20 +130,30 @@
 
             <div class="w-full max-w-4xl mx-auto relative pt-10">
 
-                <h1
-                    class="font-['Pacifico'] text-6xl text-green-800 text-center absolute top-[-10px] left-0 right-0 z-10">
+                <h1 id="titulo-ranking"
+                    class="font-['Pacifico'] text-4xl sm:text-6xl text-green-800 text-center absolute top-[-10px] left-0 right-0 z-10">
                     Ranking
                 </h1>
 
-                <div class="w-full h-[500px] bg-green-200 rounded-2xl p-8 shadow-xl items-center relative">
+                <div class="w-full h-[500px] bg-green-200 rounded-2xl p-4 sm:p-8 shadow-xl items-center relative">
 
-                    <a href="form.html" class="absolute right-4 top-2"><img src="image/avanco-rapido.png" alt="Preencher Formulário" class="w-8 h-8"></a>
+                    <button id="troca" type="button" class="absolute right-4 top-2 z-10"><img src="image/troca.png"
+                            alt="Preencher Formulário" class="w-8 h-8"></button>
 
-                    <div class="w-xl mx-auto h-[415px]">
+                    <div id="painel-ranking" class="w-full max-w-xl mx-auto h-[415px]">
 
                         <canvas id="ranking"></canvas>
 
                     </div>
+
+                    <!--Liderança do Ranking-->
+                    <div id="painel-lideranca" class="hidden">
+                        <img src="image/coroa.png" alt="" class="w-24 absolute top-[-45px] left-[80px]">
+                        <div class="bg-green-800 rounded-full w-48 h-48 absolute top-[45px] text-center items-center">
+                            <h1 class="font-bold text-green-50 text-2xl absolute top-[70px] right-[63px]">Outros</h1>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -159,24 +178,26 @@
                     maintainAspectRatio: false
                 }
             });
+
+            const botaoTroca = document.getElementById('troca');
+            const tituloRanking = document.getElementById('titulo-ranking');
+            const painelRanking = document.getElementById('painel-ranking');
+            const painelLideranca = document.getElementById('painel-lideranca');
+
+            botaoTroca.addEventListener('click', () => {
+                tituloRanking.classList.toggle('hidden');
+                painelRanking.classList.toggle('hidden');
+                painelLideranca.classList.toggle('hidden');
+            });
         </script>
 
         </div>
         </section>
 
-        <!--Liderança do Ranking-->
-        <section class="w-full flex justify-center items-center">
-
-            <div class="w-full h-[500px] bg-green-200 rounded-2xl p-8 items-center relative">
-                <img src="image/coroa.png" alt="" class="w-24 absolute top-[-45px] left-[80px]">
-                <div class="bg-blue-400 rounded-full w-48 h-48 absolute top-[45px]"></div>
-            </div>
-
-        </section>
-
     </main>
 
-    <footer class="bg-green-800 text-green-50 flex font-bold items-center justify-center py-4 px-4 shadow-xl">
+    <footer
+        class="bg-green-800 text-green-50 flex font-bold items-center justify-center py-4 px-4 shadow-xl text-center text-sm sm:text-base">
         <p>
             Universidade Iguaçu - UNIG | Projeto: TI-Verde | 2026
         </p>
