@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang='PT-BR'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='main.css'>
+
+    <title>GreenCheck - Formulário</title>
+    <meta name="description" content="Descubra o quão VERDE é a sua Empresa!">
+    <meta name="author" content="Alexandre S. de França">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="min-h-screen flex flex-col bg-green-50 overflow-x-hidden">
+
+    <header class="relative">
+        <div id="header"
+            class="bg-green-800 text-green-50 flex flex-col items-center justify-center py-10 px-4 shadow-xl">
+
+            <h1 class="font-['Pacifico'] text-5xl sm:text-6xl md:text-9xl text-center">GreenCheck</h1>
+
+        </div>
+    </header>
+
+    <main class="flex flex-col gap-5 flex-1 p-4 mx-auto items-center w-full">
+
+        <form id="formulario" class="w-full max-w-4xl mx-auto pt-10 pb-4">
+
+            <div class="w-full bg-green-200 rounded-2xl shadow-xl overflow-hidden">
+
+                <div class="bg-green-600 rounded-t-2xl py-1">
+                    <h2 class="text-center font-bold text-xl text-green-50">Formulário</h2>
+                </div>
+
+                <div class="flex flex-col gap-4 p-4 sm:p-8">
+
+                    <p class="text-center text-sm font-bold text-green-800">
+                        Responda de 1 a 10: 1 = Não é Verde | 5 = Neutra | 10 = Muito Verde!
+                    </p>
+
+                    <div class="bg-green-100 rounded-2xl p-4">
+                        <label for="empresa" class="block font-bold mb-3">Qual empresa você representa?</label>
+                        <select id="empresa" name="empresa" required
+                            class="w-full rounded-xl bg-green-50 border-2 border-green-600 text-green-800 font-bold px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-800">
+                            <option value="" disabled selected>Selecione a empresa</option>
+                            <option value="K">K</option>
+                            <option value="M">M</option>
+                            <option value="S">S</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="bg-green-100 rounded-2xl p-4">
+                        <p class="font-bold mb-3">1. A empresa prioriza a compra de equipamentos com maior
+                            eficiência energética e menor impacto ambiental?</p>
+                        <div class="grid grid-cols-5 sm:grid-cols-10 gap-2">
+                            <label class="cursor-pointer"><input type="radio" name="pergunta1" value="1" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">1</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta1" value="2" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">2</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta1" value="3" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">3</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta1" value="4" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">4</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta1" value="5" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">5</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta1" value="6" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">6</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta1" value="7" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">7</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta1" value="8" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">8</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta1" value="9" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">9</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta1" value="10" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">10</span></label>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-100 rounded-2xl p-4">
+                        <p class="font-bold mb-3">2. A empresa reutiliza ou doa equipamentos que ainda
+                            funcionam, em vez de descartá-los?</p>
+                        <div class="grid grid-cols-5 sm:grid-cols-10 gap-2">
+                            <label class="cursor-pointer"><input type="radio" name="pergunta2" value="1" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">1</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta2" value="2" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">2</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta2" value="3" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">3</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta2" value="4" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">4</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta2" value="5" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">5</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta2" value="6" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">6</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta2" value="7" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">7</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta2" value="8" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">8</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta2" value="9" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">9</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta2" value="10" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">10</span></label>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-100 rounded-2xl p-4">
+                        <p class="font-bold mb-3">3. A empresa incentiva os colaboradores a adotarem
+                            práticas sustentáveis no uso da tecnologia?</p>
+                        <div class="grid grid-cols-5 sm:grid-cols-10 gap-2">
+                            <label class="cursor-pointer"><input type="radio" name="pergunta3" value="1" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">1</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta3" value="2" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">2</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta3" value="3" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">3</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta3" value="4" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">4</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta3" value="5" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">5</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta3" value="6" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">6</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta3" value="7" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">7</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta3" value="8" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">8</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta3" value="9" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">9</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta3" value="10" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">10</span></label>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-100 rounded-2xl p-4">
+                        <p class="font-bold mb-3">4. A empresa reduz o consumo de energia com iluminação
+                            LED, sensores de presença ou desligamento automático?</p>
+                        <div class="grid grid-cols-5 sm:grid-cols-10 gap-2">
+                            <label class="cursor-pointer"><input type="radio" name="pergunta4" value="1" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">1</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta4" value="2" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">2</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta4" value="3" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">3</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta4" value="4" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">4</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta4" value="5" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">5</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta4" value="6" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">6</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta4" value="7" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">7</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta4" value="8" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">8</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta4" value="9" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">9</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta4" value="10" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">10</span></label>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-100 rounded-2xl p-4">
+                        <p class="font-bold mb-3">5. A empresa evita substituir equipamentos apenas para
+                            ter um modelo mais atual, quando os atuais ainda atendem às necessidades?</p>
+                        <div class="grid grid-cols-5 sm:grid-cols-10 gap-2">
+                            <label class="cursor-pointer"><input type="radio" name="pergunta5" value="1" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">1</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta5" value="2" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">2</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta5" value="3" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">3</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta5" value="4" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">4</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta5" value="5" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">5</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta5" value="6" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">6</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta5" value="7" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">7</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta5" value="8" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">8</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta5" value="9" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">9</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta5" value="10" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">10</span></label>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-100 rounded-2xl p-4">
+                        <p class="font-bold mb-3">6. Os colaboradores desligam computadores e luzes
+                            quando não estão em uso?</p>
+                        <div class="grid grid-cols-5 sm:grid-cols-10 gap-2">
+                            <label class="cursor-pointer"><input type="radio" name="pergunta6" value="1" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">1</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta6" value="2" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">2</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta6" value="3" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">3</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta6" value="4" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">4</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta6" value="5" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">5</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta6" value="6" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">6</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta6" value="7" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">7</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta6" value="8" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">8</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta6" value="9" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">9</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta6" value="10" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">10</span></label>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-100 rounded-2xl p-4">
+                        <p class="font-bold mb-3">7. A empresa conserta os equipamentos antes de comprar
+                            novos?</p>
+                        <div class="grid grid-cols-5 sm:grid-cols-10 gap-2">
+                            <label class="cursor-pointer"><input type="radio" name="pergunta7" value="1" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">1</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta7" value="2" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">2</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta7" value="3" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">3</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta7" value="4" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">4</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta7" value="5" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">5</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta7" value="6" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">6</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta7" value="7" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">7</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta7" value="8" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">8</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta7" value="9" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">9</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta7" value="10" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">10</span></label>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-100 rounded-2xl p-4">
+                        <p class="font-bold mb-3">8. Os computadores ficam em modo de economia de energia
+                            quando ninguém está usando?</p>
+                        <div class="grid grid-cols-5 sm:grid-cols-10 gap-2">
+                            <label class="cursor-pointer"><input type="radio" name="pergunta8" value="1" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">1</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta8" value="2" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">2</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta8" value="3" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">3</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta8" value="4" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">4</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta8" value="5" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">5</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta8" value="6" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">6</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta8" value="7" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">7</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta8" value="8" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">8</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta8" value="9" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">9</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta8" value="10" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">10</span></label>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-100 rounded-2xl p-4">
+                        <p class="font-bold mb-3">9. A empresa dá o destino correto para pilhas,
+                            baterias e aparelhos eletrônicos velhos?</p>
+                        <div class="grid grid-cols-5 sm:grid-cols-10 gap-2">
+                            <label class="cursor-pointer"><input type="radio" name="pergunta9" value="1" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">1</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta9" value="2" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">2</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta9" value="3" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">3</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta9" value="4" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">4</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta9" value="5" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">5</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta9" value="6" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">6</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta9" value="7" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">7</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta9" value="8" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">8</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta9" value="9" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">9</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta9" value="10" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">10</span></label>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-100 rounded-2xl p-4">
+                        <p class="font-bold mb-3">10. A empresa evita imprimir, preferindo guardar os
+                            documentos no computador ou na nuvem?</p>
+                        <div class="grid grid-cols-5 sm:grid-cols-10 gap-2">
+                            <label class="cursor-pointer"><input type="radio" name="pergunta10" value="1" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">1</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta10" value="2" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">2</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta10" value="3" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">3</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta10" value="4" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">4</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta10" value="5" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">5</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta10" value="6" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">6</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta10" value="7" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">7</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta10" value="8" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">8</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta10" value="9" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">9</span></label>
+                            <label class="cursor-pointer"><input type="radio" name="pergunta10" value="10" required class="peer sr-only"><span class="flex items-center justify-center h-10 rounded-xl border-2 border-green-600 bg-green-50 text-green-800 font-bold hover:bg-green-200 peer-checked:bg-green-800 peer-checked:border-green-800 peer-checked:text-green-50 peer-focus-visible:ring-2 peer-focus-visible:ring-green-800">10</span></label>
+                        </div>
+                    </div>
+
+                    <button id="finalizar" type="submit" disabled
+                        class="self-center sm:self-end bg-green-800 text-green-50 font-bold rounded-2xl h-10 px-8 enabled:hover:bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed">
+                        Finalizar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </main>
+
+    <footer
+        class="bg-green-800 text-green-50 flex font-bold items-center justify-center py-4 px-4 shadow-xl text-center text-sm sm:text-base">
+        <p>
+            Universidade Iguaçu - UNIG | Projeto: TI-Verde | 2026
+        </p>
+    </footer>
+
+    <script>
+        const formulario = document.getElementById('formulario');
+        const botaoFinalizar = document.getElementById('finalizar');
+
+        const atualizarBotao = () => {
+            botaoFinalizar.disabled = !formulario.checkValidity();
+        };
+
+        formulario.addEventListener('change', atualizarBotao);
+
+        formulario.addEventListener('submit', (evento) => {
+            evento.preventDefault();
+            window.location.href = 'index.html';
+        });
+
+        atualizarBotao();
+    </script>
+
+</body>
+
+</html>
