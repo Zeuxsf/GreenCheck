@@ -1,0 +1,12 @@
+spring:
+    datasource:
+      url: jdbc:postgresql://localhost:5433/projetoverde
+      username: ${DB_USERNAMEPSQL}
+      password: ${DB_PASSWORDPSQL}
+
+      jpa:
+        ddl-auto: validate
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
