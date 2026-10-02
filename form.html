@@ -59,8 +59,8 @@ class="bg-green-800 text-green-50 flex flex-col items-center justify-center py-1
 class="w-full rounded-xl bg-green-50 border-2 border-green-600 text-green-800 font-bold px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-800">
 <option value="" disabled selected>Selecione a empresa</option>
 </select>
-<a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=the.franca.bot@gmail.com&amp;su=Quero%20adicionar%20minha%20empresa%20ao%20GreenCheck&amp;body=Ol%C3%A1!%20Gostaria%20de%20adicionar%20minha%20empresa%20ao%20GreenCheck.%0A%0ANome%20da%20empresa%3A%20%0AAutorizo%20a%20exibi%C3%A7%C3%A3o%20do%20nome%20da%20empresa%20no%20ranking%20(Sim%2FN%C3%A3o)%3A%20%0A%0ASe%20a%20autoriza%C3%A7%C3%A3o%20n%C3%A3o%20for%20enviada%2C%20a%20empresa%20ser%C3%A1%20adicionada%20como%20an%C3%B4nima."
-target="_blank" rel="noopener noreferrer" aria-label="Quero adicionar minha empresa"
+<a id="adicionar-empresa" href="mailto:the.franca.bot@gmail.com"
+rel="noopener noreferrer" aria-label="Quero adicionar minha empresa"
 class="group absolute top-3 right-3">
 <span class="flex items-center justify-center w-8 h-8 rounded-full bg-green-800 text-green-50 font-bold group-hover:bg-green-600">?</span>
 <span class="pointer-events-none absolute right-0 top-full mt-2 z-10 whitespace-nowrap rounded-xl bg-green-800 text-green-50 text-xs font-bold px-3 py-1 shadow-xl opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100">Quero adicionar minha empresa</span>
@@ -309,6 +309,19 @@ formulario.addEventListener('submit', async (evento) => {
 
     window.location.href = 'index.html';
 });
+
+const linkEmpresa = document.getElementById('adicionar-empresa');
+
+const emailDestino = 'the.franca.bot@gmail.com'
+const assuntoEmail = 'Quero adicionar minha empresa ao GreenCheck'
+const mensagemEmail = 'Olá! Gostaria de adicionar minha empresa ao GreenCheck.\n\nNome da empresa: \nAutorizo a exibição do nome da empresa no ranking (Sim/Não): \n\nSe a autorização não for enviada, a empresa será adicionada como anônima.'
+
+if (window.matchMedia('(pointer: coarse)').matches) {
+    linkEmpresa.href = 'mailto:' + emailDestino + '?subject=' + encodeURIComponent(assuntoEmail) + '&body=' + encodeURIComponent(mensagemEmail.replace(/\n/g, '\r\n'))
+} else {
+    linkEmpresa.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + emailDestino + '&su=' + encodeURIComponent(assuntoEmail) + '&body=' + encodeURIComponent(mensagemEmail)
+    linkEmpresa.target = '_blank'
+}
 
 carregarEmpresas();
 atualizarBotao();
