@@ -20,6 +20,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--Script para adicionar gráficos-->
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <!--Fonte externa para estilização-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -131,16 +133,14 @@
         <section class="w-full flex justify-center items-center pt-4 pb-4">
 
             <div class="w-full max-w-4xl mx-auto relative pt-10">
-
-                <h1 id="titulo-ranking"
+                <h1
                     class="font-['Pacifico'] text-4xl sm:text-6xl text-green-800 text-center absolute top-[-10px] left-0 right-0 z-10">
                     Ranking
                 </h1>
-
                 <div class="w-full min-h-[500px] bg-green-200 rounded-2xl p-4 sm:p-8 shadow-xl items-center relative">
 
                     <button id="troca" type="button" class="absolute right-4 top-2 z-10"><img src="image/troca.png"
-                            alt="Preencher Formulário" class="w-8 h-8"></button>
+                            alt="Troca de Cards" class="w-8 h-8"></button>
 
                     <div id="painel-ranking" class="w-full mx-auto h-[415px]">
 
@@ -153,11 +153,14 @@
 
                         <div class="flex flex-col lg:flex-row items-center gap-6 min-h-[436px] max-w-3xl mx-auto">
 
-                            <div class="relative w-48 h-48 shrink-0 mt-16 lg:mt-0">
-                                <img src="image/coroa.png" alt="" class="w-24 absolute top-[-90px] left-[48px]">
+                            <div class="relative w-64 h-64 shrink-0 mt-16 lg:mt-0">
+                                <img src="image/coroa.png" alt=""
+                                    class="w-24 absolute top-[-90px] left-1/2 -translate-x-1/2">
                                 <div
-                                    class="bg-green-800 rounded-full w-48 h-48 flex items-center justify-center text-center">
-                                    <h1 class="font-bold text-green-50 text-2xl px-4 break-words">Outros</h1>
+                                    class="bg-green-800 rounded-full w-64 h-64 flex items-center justify-center text-center px-8 shadow-xl">
+                                    <h1 id="lider-nome"
+                                        class="font-['Pacifico'] text-3xl leading-tight text-green-50 break-words">
+                                        Carregando...</h1>
                                 </div>
                             </div>
 
@@ -189,16 +192,16 @@
                                     </div>
                                     <ul
                                         class="grid grid-cols-2 sm:grid-cols-5 gap-x-4 gap-y-1 list-disc list-inside p-3 text-sm">
-                                        <li>pergunta1</li>
-                                        <li>pergunta2</li>
-                                        <li>pergunta3</li>
-                                        <li>pergunta4</li>
-                                        <li>pergunta5</li>
-                                        <li>pergunta6</li>
-                                        <li>pergunta7</li>
-                                        <li>pergunta8</li>
-                                        <li>pergunta9</li>
-                                        <li>pergunta10</li>
+                                        <li>Compra eficiente</li>
+                                        <li>Reuso e doação</li>
+                                        <li>Incentivo sustentável</li>
+                                        <li>LED e sensores</li>
+                                        <li>Evita trocas</li>
+                                        <li>Desliga PCs e luzes</li>
+                                        <li>Conserto primeiro</li>
+                                        <li>PCs em economia</li>
+                                        <li>Descarte correto</li>
+                                        <li>Evita imprimir</li>
                                     </ul>
                                 </div>
 
@@ -213,85 +216,263 @@
 
         </section>
 
+        <div id="popup-empresa" class="hidden fixed inset-0 z-50 items-center justify-center bg-black/50 p-4"
+            role="dialog" aria-modal="true" aria-labelledby="popup-nome">
+
+            <div class="w-full max-w-lg max-h-[90vh] overflow-y-auto bg-green-200 rounded-2xl shadow-xl">
+
+                <div class="bg-green-600 rounded-t-2xl py-1 relative">
+                    <h2 class="text-center font-bold text-xl text-green-50">Avaliação Individual</h2>
+                    <button id="popup-fechar" type="button" aria-label="Fechar"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 text-green-50 font-bold text-xl leading-none">✕</button>
+                </div>
+
+                <div class="flex flex-col gap-4 p-4 sm:p-6">
+
+                    <h3 id="popup-nome" class="font-['Pacifico'] text-3xl text-green-800 text-center break-words"></h3>
+
+                    <div class="grid grid-cols-3 gap-2 text-center">
+
+                        <div class="bg-green-100 rounded-2xl p-2 flex flex-col justify-center">
+                            <p class="text-xs font-bold text-green-800">Nota geral</p>
+                            <p id="popup-nota" class="font-bold text-lg">--</p>
+                        </div>
+
+                        <div class="bg-green-100 rounded-2xl p-2 flex flex-col justify-center">
+                            <p class="text-xs font-bold text-green-800">Posição</p>
+                            <p id="popup-posicao" class="font-bold text-lg">--</p>
+                        </div>
+
+                        <div class="bg-green-100 rounded-2xl p-2 flex flex-col justify-center">
+                            <p class="text-xs font-bold text-green-800">Classificação</p>
+                            <p id="popup-classificacao" class="font-bold text-lg leading-tight">--</p>
+                        </div>
+
+                    </div>
+
+                    <div class="bg-green-100 rounded-2xl p-4">
+                        <h4 class="text-green-800 font-bold mb-2">Nota por parâmetro</h4>
+                        <div id="popup-parametros" class="flex flex-col gap-2"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+
+                        <div class="bg-green-100 rounded-2xl p-3">
+                            <p class="text-green-800 font-bold">Ponto forte</p>
+                            <p id="popup-forte">--</p>
+                        </div>
+
+                        <div class="bg-green-100 rounded-2xl p-3">
+                            <p class="text-green-800 font-bold">A melhorar</p>
+                            <p id="popup-melhorar">--</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
         <!--Script do Gráfico do Ranking-->
         <script>
-            const ctx = document.getElementById('ranking').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['K', 'M', 'S', 'Outros'],
-                    datasets: [{
-                        label: 'Empresa Verde',
-                        data: [78, 49, 85, 100],
-                        backgroundColor: 'green'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false
-                }
-            });
+            const SUPABASE_URL = 'https://wnmxaprqqhobbuvhpzqy.supabase.co'
+            const SUPABASE_KEY = 'sb_publishable_6i-aDvOkPLfZ7dRip08-vg_OGtZiJtu'
+            const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
 
-            const ctxPizzaParametros = document.getElementById('pizza-parametros').getContext('2d');
-            new Chart(ctxPizzaParametros, {
-                type: 'pie',
-                data: {
-                    labels: ['pergunta1', 'pergunta2', 'pergunta3', 'pergunta4', 'pergunta5', 'pergunta6', 'pergunta7', 'pergunta8', 'pergunta9', 'pergunta10'],
-                    datasets: [{
-                        data: [9, 8, 10, 7, 9, 10, 8, 9, 10, 10],
-                        backgroundColor: ['#14532d', '#166534', '#15803d', '#16a34a', '#22c55e', '#4ade80', '#86efac', '#bbf7d0', '#065f46', '#047857']
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'right',
-                            labels: {
-                                boxWidth: 10,
-                                font: { size: 10 }
-                            }
-                        }
-                    }
-                }
-            });
+            const nomesParametros = ['Compra eficiente', 'Reuso e doação', 'Incentivo sustentável', 'LED e sensores', 'Evita trocas', 'Desliga PCs e luzes', 'Conserto primeiro', 'PCs em economia', 'Descarte correto', 'Evita imprimir']
 
-            const ctxPizzaRanking = document.getElementById('pizza-ranking').getContext('2d');
-            new Chart(ctxPizzaRanking, {
-                type: 'pie',
-                data: {
-                    labels: ['K', 'M', 'S', 'Outros'],
-                    datasets: [{
-                        data: [78, 49, 85, 100],
-                        backgroundColor: ['#14532d', '#15803d', '#22c55e', '#86efac']
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'right',
-                            labels: {
-                                boxWidth: 10,
-                                font: { size: 10 }
-                            }
-                        }
-                    }
+            const coresParametros = ['#14532d', '#166534', '#15803d', '#16a34a', '#22c55e', '#4ade80', '#86efac', '#bbf7d0', '#065f46', '#047857']
+            const coresRanking = ['#14532d', '#15803d', '#22c55e', '#86efac', '#065f46', '#16a34a', '#4ade80', '#bbf7d0', '#166534', '#047857']
+
+            const legendaPizza = {
+                position: 'right',
+                labels: {
+                    boxWidth: 10,
+                    font: { size: 10 }
                 }
-            });
+            }
 
             const botaoTroca = document.getElementById('troca');
-            const tituloRanking = document.getElementById('titulo-ranking');
             const painelRanking = document.getElementById('painel-ranking');
             const painelLideranca = document.getElementById('painel-lideranca');
 
             botaoTroca.addEventListener('click', () => {
-                tituloRanking.classList.toggle('hidden');
                 painelRanking.classList.toggle('hidden');
                 painelLideranca.classList.toggle('hidden');
             });
+
+            const liderNome = document.getElementById('lider-nome');
+
+            const popup = document.getElementById('popup-empresa');
+            const popupFechar = document.getElementById('popup-fechar');
+            const popupNome = document.getElementById('popup-nome');
+            const popupNota = document.getElementById('popup-nota');
+            const popupPosicao = document.getElementById('popup-posicao');
+            const popupClassificacao = document.getElementById('popup-classificacao');
+            const popupParametros = document.getElementById('popup-parametros');
+            const popupForte = document.getElementById('popup-forte');
+            const popupMelhorar = document.getElementById('popup-melhorar');
+
+            const formatarNota = (valor) => Number(valor).toFixed(1).replace('.', ',')
+
+            const classificarNota = (nota) => {
+                if (nota >= 8) return 'Muito Verde'
+                if (nota >= 6) return 'Verde'
+                if (nota >= 4) return 'Neutra'
+                return 'Pouco Verde'
+            }
+
+            function criarLinhaParametro(nome, nota) {
+                const linha = document.createElement('div')
+
+                const topo = document.createElement('div')
+                topo.className = 'flex justify-between text-sm'
+
+                const rotulo = document.createElement('span')
+                rotulo.textContent = nome
+
+                const valor = document.createElement('span')
+                valor.className = 'font-bold'
+                valor.textContent = formatarNota(nota)
+
+                topo.append(rotulo, valor)
+
+                const trilho = document.createElement('div')
+                trilho.className = 'bg-green-50 rounded-full h-3 overflow-hidden'
+
+                const barra = document.createElement('div')
+                barra.className = 'bg-green-800 h-3 rounded-full'
+                barra.style.width = (nota * 10) + '%'
+
+                trilho.appendChild(barra)
+                linha.append(topo, trilho)
+
+                return linha
+            }
+
+            function abrirPopup(empresa, posicao, total) {
+                const notas = []
+                for (let i = 1; i <= 10; i++) {
+                    notas.push(Number(empresa['media_pergunta_' + i]))
+                }
+
+                const maiorNota = Math.max(...notas)
+                const menorNota = Math.min(...notas)
+
+                popupNome.textContent = empresa.empresa.nome
+                popupNota.textContent = formatarNota(empresa.media_empresa)
+                popupPosicao.textContent = posicao + 'º de ' + total
+                popupClassificacao.textContent = classificarNota(Number(empresa.media_empresa))
+                popupParametros.replaceChildren(...notas.map((nota, i) => criarLinhaParametro(nomesParametros[i], nota)))
+                popupForte.textContent = nomesParametros[notas.indexOf(maiorNota)] + ' (' + formatarNota(maiorNota) + ')'
+                popupMelhorar.textContent = nomesParametros[notas.indexOf(menorNota)] + ' (' + formatarNota(menorNota) + ')'
+
+                popup.classList.remove('hidden')
+                popup.classList.add('flex')
+            }
+
+            function fecharPopup() {
+                popup.classList.add('hidden')
+                popup.classList.remove('flex')
+            }
+
+            popupFechar.addEventListener('click', fecharPopup)
+
+            popup.addEventListener('click', (evento) => {
+                if (evento.target === popup) fecharPopup()
+            })
+
+            document.addEventListener('keydown', (evento) => {
+                if (evento.key === 'Escape') fecharPopup()
+            })
+
+            async function carregarRanking() {
+                const { data, error } = await db.from('medias').select('*, empresa(nome)')
+
+                if (error) {
+                    console.error(error)
+                    liderNome.textContent = 'Erro ao carregar'
+                    return
+                }
+
+                const ranking = data.sort((a, b) => Number(b.media_empresa) - Number(a.media_empresa))
+                const nomes = ranking.map(item => item.empresa.nome)
+                const notas = ranking.map(item => Number(item.media_empresa))
+
+                new Chart(document.getElementById('ranking').getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: nomes,
+                        datasets: [{
+                            label: 'Empresa Verde',
+                            data: notas,
+                            backgroundColor: 'green'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        onClick: (evento, elementos) => {
+                            if (!elementos.length) return
+                            const indice = elementos[0].index
+                            abrirPopup(ranking[indice], indice + 1, ranking.length)
+                        },
+                        onHover: (evento, elementos) => {
+                            evento.native.target.style.cursor = elementos.length ? 'pointer' : 'default'
+                        }
+                    }
+                });
+
+                new Chart(document.getElementById('pizza-ranking').getContext('2d'), {
+                    type: 'pie',
+                    data: {
+                        labels: nomes,
+                        datasets: [{
+                            data: notas,
+                            backgroundColor: nomes.map((_, i) => coresRanking[i % coresRanking.length])
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: legendaPizza }
+                    }
+                });
+
+                const lider = ranking[0]
+
+                if (!lider) {
+                    liderNome.textContent = 'Sem dados'
+                    return
+                }
+
+                liderNome.textContent = lider.empresa.nome
+
+                const notasLider = []
+                for (let i = 1; i <= 10; i++) {
+                    notasLider.push(Number(lider['media_pergunta_' + i]))
+                }
+
+                new Chart(document.getElementById('pizza-parametros').getContext('2d'), {
+                    type: 'pie',
+                    data: {
+                        labels: nomesParametros,
+                        datasets: [{
+                            data: notasLider,
+                            backgroundColor: coresParametros
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: legendaPizza }
+                    }
+                });
+            }
+
+            carregarRanking()
         </script>
 
         </div>
@@ -344,16 +525,17 @@
                     Integrantes
                 </h1>
 
-                <div class="w-full bg-green-200 rounded-2xl p-4 sm:p-8 pt-12 sm:pt-14 shadow-xl">
+                <div class="w-full bg-green-200 rounded-2xl p-4 sm:p-8 pt-12 sm:pt-14">
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
 
-                        <div class="bg-green-100 rounded-2xl overflow-hidden flex flex-col w-full max-w-xs">
+                        <div class="bg-green-100 rounded-2xl overflow-hidden flex flex-col w-full max-w-xs shadow-xl">
 
                             <div class="flex flex-col items-center gap-3 p-4 text-center">
 
                                 <div
                                     class="bg-green-800 rounded-full w-28 h-28 shrink-0 overflow-hidden flex items-center justify-center">
+                                    <img src="image/alexandre.jpg" alt="Alexandre">
                                 </div>
 
                                 <h3 class="text-green-800 font-bold break-words">
@@ -373,16 +555,19 @@
                         </div>
 
 
-                        <div class="bg-green-100 rounded-2xl overflow-hidden flex flex-col w-full max-w-xs">
+                        <div class="bg-green-100 rounded-2xl overflow-hidden flex flex-col w-full max-w-xs shadow-xl">
 
                             <div class="flex flex-col items-center gap-3 p-4 text-center">
 
                                 <div
                                     class="bg-green-800 rounded-full w-28 h-28 shrink-0 overflow-hidden flex items-center justify-center">
+                                    <img src="image/tauane.jpg" alt="Tauane">
                                 </div>
 
                                 <h3 class="text-green-800 font-bold break-words">
-                                    Tauane
+
+                                    Tauane da Costa Silva
+
                                 </h3>
 
                                 <p class="text-sm">
@@ -398,12 +583,13 @@
                         </div>
 
 
-                        <div class="bg-green-100 rounded-2xl overflow-hidden flex flex-col w-full max-w-xs">
+                        <div class="bg-green-100 rounded-2xl overflow-hidden flex flex-col w-full max-w-xs shadow-xl">
 
                             <div class="flex flex-col items-center gap-3 p-4 text-center">
 
                                 <div
                                     class="bg-green-800 rounded-full w-28 h-28 shrink-0 overflow-hidden flex items-center justify-center">
+                                    <img src="image/user.jpg" alt="Asafe">
                                 </div>
 
                                 <h3 class="text-green-800 font-bold break-words">
@@ -423,12 +609,13 @@
                         </div>
 
 
-                        <div class="bg-green-100 rounded-2xl overflow-hidden flex flex-col w-full max-w-xs">
+                        <div class="bg-green-100 rounded-2xl overflow-hidden flex flex-col w-full max-w-xs shadow-xl">
 
                             <div class="flex flex-col items-center gap-3 p-4 text-center">
 
                                 <div
                                     class="bg-green-800 rounded-full w-28 h-28 shrink-0 overflow-hidden flex items-center justify-center">
+                                    <img src="image/user.jpg" alt="Wagner">
                                 </div>
 
                                 <h3 class="text-green-800 font-bold break-words">
