@@ -24,15 +24,11 @@ Tauane da Costa Silva - Análise e Desenvolvimento de Sistemas - 2° Período
 
 Asafe Davi Ramos Azevedo - Análise e Desenvolvimento de Sistemas - 2° Período
 
-Wagner Costa da Silva Junior - Análise e Desenvolvimento de Sistemas - 2° Período
-
 ### Links
 
 [GreenCheck](https://zeuxsf.github.io/GreenCheck/)
 
-[Linkedin]()
-
-[Portifólio]()
+[Linkedin](https://lnkd.in/p/dejJNUPC)
 
 ---
 *Universidade Iguaçu (UNIG) - 2026*
